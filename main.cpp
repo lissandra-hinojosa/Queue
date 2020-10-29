@@ -26,6 +26,21 @@ public:
 	bool isFull();
 };
 
+// Constructor to initialize queue
+queue::queue(int size)
+{
+	arr = new int[size];
+	capacity = size;
+	front = 0;
+	rear = -1;
+	count = 0;
+}
+
+// Destructor to free memory allocated to the queue
+queue::~queue()
+{
+	delete[] arr;
+}
 
 int main()
 {
