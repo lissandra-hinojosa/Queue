@@ -31,3 +31,18 @@ int main()
 {
 	
 }
+
+void queue::dequeue()
+{
+	// check for queue underflow
+	if (isEmpty())
+	{
+		cout << "UnderFlow\nProgram Terminated\n";
+		exit(EXIT_FAILURE);
+	}
+
+	cout << "Removing " << arr[front] << '\n';
+
+	front = (front + 1) % capacity;
+	count--;
+}
