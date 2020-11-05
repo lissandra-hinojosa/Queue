@@ -46,3 +46,20 @@ int main()
 {
 	
 }
+
+// Función para agregar un elemento a la cola
+void queue::enqueue(int item)
+{
+	// check for queue overflow
+	if (isFull())
+	{
+		cout << "OverFlow\nProgram Terminated\n";
+		exit(EXIT_FAILURE);
+	}
+
+	cout << "Inserting " << item << '\n';
+
+	rear = (rear + 1) % capacity;
+	arr[rear] = item;
+	count++;
+}
